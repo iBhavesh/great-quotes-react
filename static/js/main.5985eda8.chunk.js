@@ -1,0 +1,2 @@
+(this["webpackJsonpgreat-quotes"]=this["webpackJsonpgreat-quotes"]||[]).push([[0],{12:function(e,t,c){},13:function(e,t,c){},19:function(e,t,c){"use strict";c.r(t);var n=c(0),r=c.n(n),s=c(2),o=c.n(s),i=(c(12),c(13),c(1));var j=function(){return Object(i.jsx)("div",{children:Object(i.jsx)("h1",{children:"Welcome"})})},u=c(7),a=Object(u.a)({reducer:{}}),d=c(6);o.a.render(Object(i.jsx)(r.a.StrictMode,{children:Object(i.jsx)(d.a,{store:a,children:Object(i.jsx)(j,{})})}),document.getElementById("root"))}},[[19,1,2]]]);
+//# sourceMappingURL=main.5985eda8.chunk.js.map
