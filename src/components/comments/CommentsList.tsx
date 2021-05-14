@@ -1,7 +1,10 @@
-import CommentItem from './CommentItem';
-import classes from './CommentsList.module.css';
+import CommentItem from "./CommentItem";
+import classes from "./CommentsList.module.css";
 
-const CommentsList = (props) => {
+type Props = {
+  comments: any[];
+};
+const CommentsList = (props: Props) => {
   return (
     <ul className={classes.comments}>
       {props.comments.map((comment) => (

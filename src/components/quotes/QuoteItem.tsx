@@ -1,6 +1,12 @@
-import classes from './QuoteItem.module.css';
+import classes from "./QuoteItem.module.css";
 
-const QuoteItem = (props) => {
+type Props = {
+  id: string;
+  text: string;
+  author: string;
+};
+
+const QuoteItem = (props: Props) => {
   return (
     <li className={classes.item}>
       <figure>
@@ -9,9 +15,7 @@ const QuoteItem = (props) => {
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <a className='btn'>
-        View Fullscreen
-      </a>
+      <a className="btn">View Fullscreen</a>
     </li>
   );
 };
