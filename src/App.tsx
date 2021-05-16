@@ -8,11 +8,13 @@ import Quotes from "./pages/AllQuotes";
 import NotFound from "./pages/NotFound";
 
 function App() {
+  console.log(process.env.PUBLIC_URL);
+
   return (
     <Layout>
       <Switch>
         <Route exact path="/">
-          <Redirect to="quotes" />
+          <Redirect to="/quotes" />
         </Route>
         <Route exact path="/quotes">
           <Quotes />
