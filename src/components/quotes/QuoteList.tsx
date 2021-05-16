@@ -20,13 +20,16 @@ const sortQuotes = (quotes: any[], ascending: boolean) => {
 
 const QuoteList = (props: Props) => {
   const history = useHistory();
-
+  const location = useLocation();
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   };
   const isSortingDescending = useQuery().get("sort") === "desc";
   const changeSortingHandler = () => {
-    history.push(`/quotes?sort=${isSortingDescending ? "asc" : "desc"}`);
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${isSortingDescending ? "asc" : "desc"}`,
+    });
   };
   const sortedQuotes = sortQuotes(props.quotes, !isSortingDescending);
   return (

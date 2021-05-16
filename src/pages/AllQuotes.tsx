@@ -18,8 +18,8 @@ export const DUMMY_QUOTES = [
   },
 ];
 
-const Quotes = () => {
+const AllQuotes = () => {
   return <QuoteList quotes={DUMMY_QUOTES} />;
 };
 
-export default Quotes;
+export default AllQuotes;
