@@ -1,13 +1,13 @@
 import { FormEventHandler, useRef, useState } from "react";
 import { Prompt } from "react-router";
-import { NQ } from "../../pages/NewQuote";
+import { Quote } from "../../helpers/types";
 
 import Card from "../UI/Card";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import classes from "./QuoteForm.module.css";
 
 type Props = {
-  onAddQuote: (arg0: NQ) => void;
+  onAddQuote: (arg0: Quote) => void;
   isLoading: boolean;
 };
 

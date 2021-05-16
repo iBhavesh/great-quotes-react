@@ -1,13 +1,8 @@
 import { Link } from "react-router-dom";
+import { QuoteWithId } from "../../helpers/types";
 import classes from "./QuoteItem.module.css";
 
-type Props = {
-  id: string;
-  text: string;
-  author: string;
-};
-
-const QuoteItem = (props: Props) => {
+const QuoteItem = (props: QuoteWithId) => {
   return (
     <li className={classes.item}>
       <figure>

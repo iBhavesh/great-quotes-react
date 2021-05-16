@@ -1,14 +1,15 @@
 import { Fragment } from "react";
 import { useHistory, useLocation } from "react-router";
+import { QuoteWithId } from "../../helpers/types";
 
 import QuoteItem from "./QuoteItem";
 import classes from "./QuoteList.module.css";
 
 type Props = {
-  quotes: any[];
+  quotes: QuoteWithId[];
 };
 
-const sortQuotes = (quotes: any[], ascending: boolean) => {
+const sortQuotes = (quotes: QuoteWithId[], ascending: boolean) => {
   return quotes.sort((quoteA, quoteB) => {
     if (ascending) {
       return quoteA.id > quoteB.id ? 1 : -1;

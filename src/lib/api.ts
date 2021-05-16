@@ -1,4 +1,7 @@
-const FIREBASE_DOMAIN = "https://react-prep-default-rtdb.firebaseio.com";
+import { Quote, QuoteWithId } from "../helpers/types";
+
+const FIREBASE_DOMAIN =
+  "https://react-http-5b949-default-rtdb.asia-southeast1.firebasedatabase.app";
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
@@ -8,10 +11,10 @@ export async function getAllQuotes() {
     throw new Error(data.message || "Could not fetch quotes.");
   }
 
-  const transformedQuotes = [];
+  const transformedQuotes: QuoteWithId[] = [];
 
   for (const key in data) {
-    const quoteObj = {
+    const quoteObj: QuoteWithId = {
       id: key,
       ...data[key],
     };
@@ -30,7 +33,7 @@ export async function getSingleQuote(quoteId: string) {
     throw new Error(data.message || "Could not fetch quote.");
   }
 
-  const loadedQuote = {
+  const loadedQuote: QuoteWithId = {
     id: quoteId,
     ...data,
   };
@@ -38,7 +41,9 @@ export async function getSingleQuote(quoteId: string) {
   return loadedQuote;
 }
 
-export async function addQuote(quoteData: any) {
+export async function addQuote(quoteData: Quote) {
+  console.log(FIREBASE_DOMAIN);
+
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`, {
     method: "POST",
     body: JSON.stringify(quoteData),
