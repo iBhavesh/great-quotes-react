@@ -36,12 +36,14 @@ const AllQuotes = () => {
   }, [sendRequest]);
 
   if (status === "pending") {
-    <div className="centered">
-      <LoadingSpinner />
-    </div>;
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
   }
   if (error) {
-    return <p className="focused centered">{error}</p>;
+    return <p className="centered">{error}</p>;
   }
   if (status === "completed" && (!loadedQuotes || loadedQuotes.length === 0)) {
     return <NoQuotesFound />;

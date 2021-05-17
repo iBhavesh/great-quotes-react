@@ -23,9 +23,11 @@ const QuoteDetail = () => {
   }, [sendRequest, params.quoteId]);
 
   if (status === "pending") {
-    <div className="centered">
-      <LoadingSpinner />
-    </div>;
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
   }
   if (error) {
     return <p className="focused centered">{error}</p>;
